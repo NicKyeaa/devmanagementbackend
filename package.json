@@ -6,6 +6,7 @@
   "author": "Tin Jurcevic",
   "license": "MIT",
   "dependencies": {
-    "fastify": "^4.5.2"
+    "fastify": "^4.5.2",
+    "nodemon": "^2.0.19"
   }
 }
