@@ -31,4 +31,22 @@ const Equipment = mongoose.model('Equipment', {
         required: false,
         trim: true
     },
+    dateOfPurchase: {
+        type: Date,
+        required: false,
+    },
+    warrantyDate: {
+        type: Date,
+        required: false
+    },
+    remarks: {
+        type: String,
+        required: false
+    },
+    equipmentStatus: {
+        type: Boolean,
+        required: false
+    }
 });
+
+module.exports = Equipment;

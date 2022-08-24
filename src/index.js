@@ -1,40 +1,21 @@
 // Imports
-require('./db/mongoose.js')
-const fastify = require('fastify')({ logger: true })
+const express = require('express');
+require('./db/mongoose.js');
+const Equipment = require('./models/equipment');
 
-fastify.route({
-    method: 'GET',
-    url: '/equipment',
-    schema: {
-        // request needs to have a querystring with a `name` parameter
-        querystring: {
-            name: { type: 'string' }
-        },
-        // the response needs to be an object with an `hello` property of type 'string'
-        response: {
-            200: {
-                type: 'object',
-                properties: {
-                    hello: { type: 'string' }
-                }
-            }
-        }
-    },
-    // this function is executed for every request before the handler is executed
-    preHandler: async(request, reply) => {
-        // E.g. check authentication
-    },
-    handler: async(request, reply) => {
-        return { hello: 'world' }
-    }
-})
 
-const start = async() => {
+const app = express();
+const port = proccess.env.PORT || 3500;
+
+app.use(express.json());
+
+app.post('equipment', async(req, res) => {
+    const equipment = new equipment(req.body)
+
     try {
-        await fastify.listen({ port: 3500 })
-    } catch (err) {
-        fastify.log.error(err)
-        process.exit(1)
+        await user.save();
+        res.status(201).send(equipment);
+    } catch (e) {
+        res.status(400).send(e);
     }
-}
-start()
+});
