@@ -1,0 +1,11 @@
+{
+  "name": "devmanagementbackend",
+  "version": "1.0.0",
+  "description": "Backend for devicer management software",
+  "main": "index.js",
+  "author": "Tin Jurcevic",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.5.2"
+  }
+}
