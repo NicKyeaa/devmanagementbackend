@@ -9,14 +9,27 @@ const port = process.env.PORT || 3500;
 
 app.use(express.json());
 
-app.post('equipment', async(req, res) => {
-    const equipment = new equipment(req.body)
-
+app.post('/equipment', async(req, res) => {
+    const equipment = new Equipment(req.body)
+    console.log(equipment);
     try {
         console.log('Equipment added successfully');
-        // await user.save();
-        // res.status(201).send(equipment);
+        await equipment.save();
+        res.status(201).send(equipment);
     } catch (e) {
         res.status(400).send(e);
     }
 });
+
+app.get('/equipment', async(req, res) => {
+    try {
+        const equipment = await equipment.find({})
+        res.send(equipment)
+    } catch (e) {
+        res.status(500).send()
+    }
+});
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})
