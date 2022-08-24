@@ -2,7 +2,7 @@ const fastify = require('fastify')({ logger: true })
 
 fastify.route({
     method: 'GET',
-    url: '/',
+    url: '/equipment',
     schema: {
         // request needs to have a querystring with a `name` parameter
         querystring: {
@@ -29,7 +29,7 @@ fastify.route({
 
 const start = async() => {
     try {
-        await fastify.listen({ port: 3000 })
+        await fastify.listen({ port: 3500 })
     } catch (err) {
         fastify.log.error(err)
         process.exit(1)
