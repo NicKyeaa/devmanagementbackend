@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "fastify": "^4.5.2",
-    "moongoose": "^0.0.5",
+    "mongoose": "^6.5.2",
     "nodemon": "^2.0.19"
   }
 }
