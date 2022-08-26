@@ -1,13 +1,13 @@
 {
-  "name": "devmanagementbackend",
-  "version": "1.0.0",
-  "description": "Backend for devicer management software",
-  "main": "index.js",
-  "author": "Tin Jurcevic",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.1",
-    "mongoose": "^6.5.2",
-    "nodemon": "^2.0.19"
-  }
+    "name": "devmanagementbackend",
+    "version": "1.0.0",
+    "description": "Backend for devicer management software",
+    "main": "index.js",
+    "author": "Tin Jurcevic",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.1",
+        "mongoose": "^6.5.2",
+        "nodemon": "^2.0.19"
+    }
 }

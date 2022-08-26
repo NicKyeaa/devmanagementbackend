@@ -24,6 +24,7 @@ app.get('/equipment', async(req, res) => {
     try {
         const equipments = await Equipment.find({})
         res.send(equipments)
+        console.log('Request completed successfully'); 
     } catch (e) {
         console.log(e)
         res.status(500).send()
