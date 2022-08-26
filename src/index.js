@@ -22,9 +22,10 @@ app.post('/equipment', async(req, res) => {
 
 app.get('/equipment', async(req, res) => {
     try {
-        const equipments = await equipment.find({})
+        const equipments = await Equipment.find({})
         res.send(equipments)
     } catch (e) {
+        console.log(e)
         res.status(500).send()
     }
 });
