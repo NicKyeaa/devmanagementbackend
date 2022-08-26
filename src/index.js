@@ -1,5 +1,6 @@
 // Imports
 const express = require('express');
+const cors = require('cors')
 require('./db/mongoose.js');
 const Equipment = require('./models/equipment');
 
@@ -7,6 +8,7 @@ const Equipment = require('./models/equipment');
 const app = express();
 const port = process.env.PORT || 3500;
 
+app.use(cors());
 app.use(express.json());
 
 app.post('/equipment', async(req, res) => {
