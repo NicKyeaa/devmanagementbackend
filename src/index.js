@@ -13,7 +13,6 @@ app.post('/equipment', async(req, res) => {
     const equipment = new Equipment(req.body)
     console.log(equipment);
     try {
-        console.log('Equipment added successfully');
         await equipment.save();
         res.status(201).send(equipment);
     } catch (e) {
@@ -23,8 +22,8 @@ app.post('/equipment', async(req, res) => {
 
 app.get('/equipment', async(req, res) => {
     try {
-        const equipment = await equipment.find({})
-        res.send(equipment)
+        const equipments = await equipment.find({})
+        res.send(equipments)
     } catch (e) {
         res.status(500).send()
     }
