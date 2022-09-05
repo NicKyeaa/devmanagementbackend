@@ -13,7 +13,6 @@ app.use(express.json());
 
 app.post('/equipment', async(req, res) => {
     const equipment = new Equipment(req.body)
-    console.log(equipment);
     try {
         await equipment.save();
         res.status(201).send(equipment);
